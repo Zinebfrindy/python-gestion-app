@@ -1,0 +1,63 @@
+Algorithme général de l’application
+
+Début
+
+    Définir la structure Stagiaire avec :
+        - Numéro d’inscription
+        - Nom et prénom
+        - Filière
+        - Niveau
+
+    Procédure charger_donnees()
+        Créer une liste de stagiaires avec des données prédéfinies
+        Retourner cette liste
+
+    Procédure trier_par_num_inscription(liste)
+        Trier la liste selon le numéro d’inscription croissant
+        Retourner la liste triée
+
+    Procédure trier_par_nom_prenom(liste)
+        Trier la liste selon l’ordre alphabétique des noms
+        Retourner la liste triée
+
+    Procédure afficher_etat_global(liste)
+        Afficher l’en-tête du tableau
+        Pour chaque stagiaire dans la liste faire
+            Afficher son numéro, nom, filière et niveau
+        Fin Pour
+
+    Procédure afficher_par_filiere(liste)
+        Pour chaque filière unique dans la liste faire
+            Afficher en-tête + tableau
+            Pour chaque stagiaire de cette filière faire
+                Afficher ses infos
+            Fin Pour
+        Fin Pour
+
+    Procédure menu()
+        Afficher les options :
+            1. État global
+            2. Tri par numéro
+            3. Tri par nom
+            4. Par filière
+            5. Quitter
+        Lire choix
+        Retourner choix
+
+    Procédure gerer_menu()
+        Appeler charger_donnees() et stocker dans stagiaires_globale
+        Répéter
+            Appeler menu() → choix
+            Selon choix faire
+                Cas "1" : afficher_etat_global(stagiaires_globale)
+                Cas "2" : trier_par_num_inscription + afficher
+                Cas "3" : trier_par_nom_prenom + afficher
+                Cas "4" : afficher_par_filiere
+                Cas "5" : afficher "Merci" et quitter la boucle
+                Sinon : afficher "Choix invalide"
+            Fin Selon
+        Jusqu’à ce que choix = "5"
+
+    Appeler gerer_menu()
+
+Fin
